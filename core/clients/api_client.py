@@ -41,3 +41,4 @@ class APIClient:
         if status_code:
             assert response.status_code == status_code
         return response.json()
+
