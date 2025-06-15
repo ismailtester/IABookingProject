@@ -1,4 +1,4 @@
-import Faker
+from faker import Faker
 import pytest
 from core.clients.api_client import APIClient
 from datetime import datetime, timedelta
