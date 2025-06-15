@@ -52,7 +52,7 @@ def test_ping_not_found(api_client, mocker):
 
 
 @allure.feature("Test Ping")
-@allure.story("Test connection with different succes code")
+@allure.story("Test connection with different success code")
 def test_ping_success_different_code(api_client, mocker):
     mock_response = mocker.Mock()
     mock_response.status_code = 200
