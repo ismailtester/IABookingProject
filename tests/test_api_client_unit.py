@@ -81,3 +81,4 @@ def test_create_booking_timeout(api_client, mocker, generate_random_booking_data
 
     with pytest.raises(requests.Timeout):
         api_client.create_booking(payload)
+
