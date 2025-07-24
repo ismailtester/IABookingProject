@@ -4,19 +4,18 @@ pipeline {
     stages {
         stage('Setup Python Environment') {
             steps {
-                // Шаг создания виртуального окружения и активации его
+                // Шаг создания виртуального окружения
                 sh 'python3 -m venv venv'
-                sh '. venv/bin/activate'
 
-                // Установка зависимостей из requirements.txt
-                sh 'pip install -r requirements.txt'
+                // Установка зависимостей из requirements.txt с флагом для обхода ограничений
+                sh './venv/bin/pip install --break-system-packages -r requirements.txt'
             }
         }
 
         stage('Run Tests') {
             steps {
                 // Запуск тестов и генерация отчета allure
-                sh 'python -m pytest --alluredir allure-results --break-system-packages'
+                sh './venv/bin/python -m pytest --alluredir allure-results'
             }
         }
 
