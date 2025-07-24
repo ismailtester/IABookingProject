@@ -16,7 +16,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 // Запуск тестов и генерация отчета allure
-                sh 'python -m pytest --alluredir allure-results'
+                sh 'python -m pytest --alluredir allure-results --break-system-packages'
             }
         }
 
